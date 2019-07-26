@@ -1,5 +1,7 @@
 ## Compilation
 
+[![Build Status](https://travis-ci.org/thekvs/bitbucket-backup.svg?branch=master)](https://travis-ci.org/thekvs/bitbucket-backup)
+
 Run `make` command in the repository's root, compiled binary will be located in the `bin` subfolder. You need Go programming language version >= 1.11 to compile this project.
 
 ## Usage
