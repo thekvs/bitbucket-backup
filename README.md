@@ -16,14 +16,14 @@ Application Options:
   -p, --password=      bitbucket user's password
   -l, --location=      local backup location
   -a, --attempts=      number of attempts to make before giving up (default: 1)
-  -i, --ignore=        list of repositories to ignore
-  -m, --mirror         git only: clone bare repository
+  -i, --ignore=        repository to ignore, may be specified several times
+  -b, --bare           clone bare repository (git only)
   -w, --with-wiki      also backup wiki
-      --prune          prune repo on remote update
-      --http           fetch via https instead of ssh
-      --dry-run        do nothing, just print commands
-      --verbose        be more verbose
-      --show-progress  show progressbar
+  -P, --prune          prune repo on remote update (git only)
+  -h, --http           clone/update via https instead of ssh
+  -d, --dry-run        do nothing, just print commands
+  -v, --verbose        be more verbose
+  -s, --show-progress  show progress bar
 
 Help Options:
   -h, --help           Show this help message

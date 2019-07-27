@@ -39,14 +39,14 @@ type Options struct {
 	Password     string   `short:"p" long:"password" description:"bitbucket user's password"`
 	Location     string   `short:"l" long:"location" description:"local backup location"`
 	Attempts     uint     `short:"a" long:"attempts" description:"number of attempts to make before giving up" default:"1"`
-	Ignore       []string `short:"i" long:"ignore" description:"list of repositories to ignore"`
-	Mirror       bool     `short:"m" long:"mirror" description:"git only: clone bare repository"`
+	Ignore       []string `short:"i" long:"ignore" description:"repository to ignore, may be specified several times"`
+	Bare         bool     `short:"b" long:"bare" description:"clone bare repository (git only)"`
 	WithWiki     bool     `short:"w" long:"with-wiki" description:"also backup wiki"`
-	Prune        bool     `long:"prune" description:"prune repo on remote update"`
-	HTTP         bool     `long:"http" description:"fetch via https instead of ssh"`
-	DryRun       bool     `long:"dry-run" description:"do nothing, just print commands"`
-	Verbose      bool     `long:"verbose" description:"be more verbose"`
-	ShowProgress bool     `long:"show-progress" description:"show progressbar"`
+	Prune        bool     `short:"P" long:"prune" description:"prune repo on remote update (git only)"`
+	HTTP         bool     `short:"h" long:"http" description:"clone/update via https instead of ssh"`
+	DryRun       bool     `short:"d" long:"dry-run" description:"do nothing, just print commands"`
+	Verbose      bool     `short:"v" long:"verbose" description:"be more verbose"`
+	ShowProgress bool     `short:"s" long:"show-progress" description:"show progress bar"`
 }
 
 func getRepositories(opts Options) ([]Repository, error) {
@@ -174,7 +174,7 @@ func makeCommand(opts Options, repository Repository, how int, folderName string
 		cmd = append(cmd, "git")
 		if how == cloneRepository {
 			cmd = append(cmd, "clone")
-			if opts.Mirror {
+			if opts.Bare {
 				cmd = append(cmd, "--mirror")
 			}
 			if folderName == repositoryFolderName {
