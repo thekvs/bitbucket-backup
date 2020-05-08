@@ -1,8 +1,11 @@
 # github.com/jessevdk/go-flags v1.4.0
+## explicit
 github.com/jessevdk/go-flags
 # github.com/mitchellh/colorstring v0.0.0-20190213212951-d06e56a500db
 github.com/mitchellh/colorstring
-# github.com/nightlyone/lockfile v0.0.0-20180618180623-0ad87eef1443
+# github.com/nightlyone/lockfile v1.0.0
+## explicit
 github.com/nightlyone/lockfile
-# github.com/schollz/progressbar/v2 v2.13.2
+# github.com/schollz/progressbar/v2 v2.15.0
+## explicit
 github.com/schollz/progressbar/v2
