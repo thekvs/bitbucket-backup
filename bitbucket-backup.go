@@ -248,7 +248,10 @@ func processRepositories(opts Options, repositories []Repository) error {
 
 	for i := range repositories {
 		if bar != nil {
-			bar.Add(1)
+			err = bar.Add(1)
+			if err != nil {
+				return err
+			}
 		}
 
 		if repositories[i].Type != "repository" {
