@@ -263,7 +263,7 @@ func processRepositories(opts Options, repositories []Repository) error {
 			continue
 		}
 
-		err = os.MkdirAll(filepath.Join(opts.Location, repositories[i].Slug), 0775)
+		err = os.MkdirAll(filepath.Join(opts.Location, repositories[i].Slug), 0o775)
 		if err != nil {
 			return err
 		}
